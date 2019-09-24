@@ -5,47 +5,38 @@ import { Place } from './place.model';
   providedIn: 'root'
 })
 export class PlacesService {
-  private places: Place[] = [
+
+  private _places: Place[] = [
     new Place(
       'p1',
-      'Serpong M-Town',
-      '2BR apartement near Summarecon Mall Serpong',
-      'https://d1pr4bk5d0i5im.cloudfront.net/images/c5/ed/360009924_69_1.jpg',
-      700000000
+      'Gading Apartment',
+      '2BR, Luas dan Cozy',
+      'http://www.desertsun.co.uk/blog/images/Apartment%201.jpg',
+      100000000
     ),
     new Place(
       'p2',
-      'Scientia Residence',
-      'Near UMN with Many choices of foods around.',
-      'https://d1nabgopwop1kh.cloudfront.net/hotel-asset/30000002100123854_wh_3',
-      1000000000
+      'Serpong Apartment',
+      'Apartemen Romantis',
+      'https://static3.businessinsider.com/image/5681799ce6183e55008b526d-480/carmel-place-nyc-micro-apartment.jpg',
+      125000000
     ),
     new Place(
       'p3',
-      'Serpong M-Town',
-      '2BR apartement near Summarecon Mall Serpong',
-      'https://d1pr4bk5d0i5im.cloudfront.net/images/c5/ed/360009924_69_1.jpg',
-      700000000
+      'BSD Apartment',
+      'Apartemen Murah',
+      'https://lh3.googleusercontent.com/-F5aY6yinaiA/TW_NzlRJppI/AAAAAAAAABo/fewLnztPeDU/s1600/apartment+building+designs...jpg',
+      50000000
     ),
-    new Place(
-      'p4',
-      'Scientia Residence',
-      'Near UMN with Many choices of foods around.',
-      'https://d1nabgopwop1kh.cloudfront.net/hotel-asset/30000002100123854_wh_3',
-      1000000000
-    )
   ];
 
-  constructor() {}
-
-  getPlaces() {
-    return [...this.places];
+  get places() {
+    return [...this._places];
   }
 
-  getPlace(id: String){
-    return {...this.places.find(p => p.id === id)}
+  constructor() { }
+
+  getPlace(id: string){
+    return {...this._places.find(p => p.id === id)};
   }
-
-
 }
-

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Place } from '../../place.model';
 import { ActivatedRoute } from '@angular/router';
 import { PlacesService } from '../../places.service';
 import { NavController } from '@ionic/angular';
+import { Place } from '../../place.model';
 
 @Component({
   selector: 'app-edit-offer',
@@ -10,8 +10,8 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./edit-offer.page.scss'],
 })
 export class EditOfferPage implements OnInit {
-
   place: Place;
+
   constructor(
     private route: ActivatedRoute,
     private placesService: PlacesService,

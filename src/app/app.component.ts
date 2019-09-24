@@ -29,7 +29,7 @@ export class AppComponent {
     });
   }
 
-  onLogout(){
+  onLogout() {
     this.authService.logout();
     this.router.navigateByUrl('/auth');
   }
