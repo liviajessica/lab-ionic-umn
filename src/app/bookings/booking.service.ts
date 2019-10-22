@@ -17,7 +17,7 @@ export class BookingService {
 
   constructor() { }
 
-  get bookings(){
+  get bookings() {
     return [...this._bookings];
   }
 }

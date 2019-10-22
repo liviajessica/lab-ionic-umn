@@ -12,7 +12,6 @@ export class DiscoverPage implements OnInit {
   loadedPlaces: Place[];
   listedLoadedPlaces: Place[];
 
-
   constructor(private placesService: PlacesService) { }
 
   ngOnInit() {
@@ -20,7 +19,8 @@ export class DiscoverPage implements OnInit {
     this.listedLoadedPlaces = this.loadedPlaces.slice(1);
   }
 
-  onFilterUpdate(event: CustomEvent<SegmentChangeEventDetail>){
+  onFilterUpdate(event: CustomEvent<SegmentChangeEventDetail>) {
     console.log(event.detail);
   }
+
 }

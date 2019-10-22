@@ -36,43 +36,49 @@ export class PlaceDetailPage implements OnInit {
     // this.router.navigateByUrl('/places/tabs/discover');
     // this.navCtrl.navigateBack('/places/tabs/discover');
     // this.navCtrl.pop();
-    this.actionSheetCtrl
-      .create({
-        header: 'Choose an Action',
-        buttons: [
-          {
-            text: 'Select Date',
-            handler: () => {
-              this.openBookingModal('select');
-            }
-          },
-          {
-            text: 'Random Date',
-            handler: () => {
-              this.openBookingModal('random');
-            }
-          },
-          {
-            text: 'Cancel',
-            role: 'cancel'
+    this.actionSheetCtrl.create({
+      header: 'Choose an Action',
+      buttons: [
+        {
+          text: 'Select Date',
+          handler: () => {
+            this.openBookingModal('select');
           }
-        ]
-      })
-      .then(actionSheetEl => {
-        actionSheetEl.present();
-      });
-    }
+        },
+        {
+          text: 'Random Date',
+          handler: () => {
+            this.openBookingModal('random');
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        }
+      ]
+    })
+    .then(actionSheetEl => {
+      actionSheetEl.present();
+    });
+  }
 
-    openBookingModal(mode: 'select' | 'random'){
-      console.log(mode);
-      this.modalCtrl
-      .create({
-        component: CreateBookingComponent,
-        componentProps: {selectedPlace : this.place}
-      })
-      .then(modalEl => {
-        modalEl.present();
-        return modalEl.onDidDismiss();
-      })
-    }
+  openBookingModal(mode: 'select' | 'random') {
+    console.log(mode);
+    this.modalCtrl
+    .create({
+      component: CreateBookingComponent,
+      componentProps: { selectedPlace: this.place, selectedMode: mode }
+    })
+    .then(modalEl => {
+      modalEl.present();
+      return modalEl.onDidDismiss();
+    })
+    .then(resultData => {
+      console.log(resultData.data, resultData.role);
+      if (resultData.role === 'confirm') {
+        console.log('BOOKED');
+      }
+    });
+  }
+
 }

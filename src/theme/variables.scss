@@ -5,7 +5,7 @@
 :root {
   /** primary **/
   --ion-color-primary: #3ea400;
-  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-rgb: 62, 164, 0;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #379000;
@@ -13,7 +13,7 @@
 
   /** secondary **/
   --ion-color-secondary: #1adb6b;
-  --ion-color-secondary-rgb: 29, 219, 107;
+  --ion-color-secondary-rgb: 26, 219, 107;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
   --ion-color-secondary-shade: #17c15e;
@@ -74,4 +74,7 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-toolbar-background: var(--ion-color-primary, black);
+  --ion-toolbar-color: var(--ion-color-primary-contrast, white);
 }
