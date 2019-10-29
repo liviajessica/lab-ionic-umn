@@ -36,14 +36,12 @@ export class AuthPage implements OnInit {
     this.authService.login();
   }
 
-  onSwitchAuthMode(){
+  onSwitchAuthMode() {
     this.isLogin = !this.isLogin;
   }
 
-  onSubmit(form: NgForm){
-    console.log(form);
-
-    if (!form.valid){
+  onSubmit(form: NgForm) {
+    if (!form.valid) {
       return;
     }
     const email = form.value.email;
@@ -51,7 +49,7 @@ export class AuthPage implements OnInit {
 
     console.log(email, password);
 
-    if (this.isLogin){
+    if (this.isLogin) {
       // Send a request to login servers
     } else {
       // Send a request to signup servers
