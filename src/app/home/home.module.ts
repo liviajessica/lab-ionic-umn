@@ -1,4 +1,3 @@
-import { NewBookingPage } from './new-booking/new-booking.page';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -19,7 +18,6 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage,NewBookingPage],
-  entryComponents: [NewBookingPage]
+  declarations: [HomePage]
 })
 export class HomePageModule {}
