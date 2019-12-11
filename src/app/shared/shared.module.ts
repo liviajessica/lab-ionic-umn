@@ -3,21 +3,23 @@ import { CommonModule } from '@angular/common';
 import { LocationPickerComponent } from './pickers/location-picker/location-picker.component';
 import { MapModalComponent } from './map-modal/map-modal.component';
 import { IonicModule } from '@ionic/angular';
-import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
-
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
-  declarations: [LocationPickerComponent, MapModalComponent],
+  declarations: [LocationPickerComponent,MapModalComponent],
   imports: [
-    CommonModule, 
+    CommonModule,
     IonicModule,
     AgmCoreModule.forRoot({
-      apiKey: `${environment.mapsAPIKey}`
+      apiKey:`${environment.mapsAPIKey}`
     })
   ],
-  exports: [LocationPickerComponent, MapModalComponent],
-  entryComponents: [MapModalComponent]
+  exports:[
+    LocationPickerComponent,
+    MapModalComponent
+  ],
+  entryComponents:[MapModalComponent]
 })
 export class SharedModule { }

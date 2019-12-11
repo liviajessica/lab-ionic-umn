@@ -1,17 +1,16 @@
-agm-map {
-    height: 300px;
+agm-map{
+    height:300px;
 }
 
-
-.map {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: transparant;
-    opacity: 0;
-    transition: opacity 150ms ease-in;
+.map{
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-color: transparent;
+    opacity:0;
+    transition:opacity 150ms ease-in;
 }
 
-.map.visible {
-    opacity: 1;
+.map.visible{
+    opacity:1;
 }

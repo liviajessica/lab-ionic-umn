@@ -5,15 +5,14 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class PlaceService {
-  currAddress = new BehaviorSubject<string>('');
-
+  currAddress=new BehaviorSubject<string>('');
   constructor() { }
-  getAddress() {
+
+  getAddress(){
     return this.currAddress.asObservable();
   }
 
-  setAddress(address: string) {
+  setAddress(address:string){
     this.currAddress.next(address);
   }
-
 }
